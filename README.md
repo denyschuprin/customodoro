@@ -310,30 +310,12 @@ Reverse keeps the same UI, themes, and analytics, but changes the timing model: 
 
 ---
 
-## 📞 **Community & Support**
-
-**🌐 Classic Pomodoro**: [customodoro.vercel.app](https://customodoro.vercel.app)  
-**⏱️ Reverse Pomodoro**: [customodoro.vercel.app/reverse](https://customodoro.vercel.app/reverse)  
-**📝 Bug Reports & Feature Requests**: [Submit Feedback](https://noteforms.com/forms/feedback-and-bug-reporting-form-fnkwn7)  
-**📧 Direct Contact**: [brianyabutech@gmail.com](mailto:brianyabutech@gmail.com)  
-**⭐ GitHub Repository**: Star this repo to support development!
-
----
-
 ## 🔗 **Related Projects & Links**
 
 - **Pomodoro Technique**: Learn about the original productivity method
 - **Time Management Apps**: Compare Customodoro with other productivity tools
 - **PWA Development**: Explore Progressive Web App technology
 - **Productivity Resources**: Tips and tricks for better focus and time management
-
----
-
-## 📄 **License & Attribution**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-**Open Source Contributions Welcome!** Help make Customodoro even better for the productivity community.
 
 ---
 
