@@ -99,7 +99,7 @@ _Perfect for deep work sessions, creative flow states, coding marathons, or when
 
 - **☀️ Light Mode** - Clean, minimalist design for daytime productivity
 - **🌙 Dark Mode** - Easy on the eyes for evening work sessions
-- **🌸 君の名は (Your Name)** - Anime-inspired aesthetic theme
+- **🌸 Your Name** - Anime-inspired aesthetic theme
 - **🖼️ Custom Theme** - Upload your own background image (JPG, PNG, GIF up to 2MB)
 - **🌧️ Man in Rain** – A reflective and cozy vibe featuring an aesthetic rainy GIF
 - **🎨 Color Theme** – Select from predefined color palettes or create your own using custom HEX codes for full personalization
