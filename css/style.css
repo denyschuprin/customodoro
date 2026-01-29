@@ -1,0 +1,5349 @@
+:root {
+  --focus-color: #948979;
+  --short-break-color: #393e46;
+  --long-break-color: #222831;
+  --reverse-color: #393e46;
+  --break-color: #393e46;
+  --bg-light: #f5f5f5;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.tab {
+  color: #2c2c2c; /* instead of #888 or light grey */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+/* Font optimization for better performance */
+html {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-variant-ligatures: none;
+  text-rendering: optimizeSpeed;
+}
+
+/* Ensure consistent Inter font application */
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+/* ===== INTER TYPOGRAPHY SYSTEM ===== */
+/* Consistent font weights and sizes for smooth transition */
+
+/* Typography CSS Custom Properties */
+:root {
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Font Sizes - Maintaining visual consistency */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+}
+
+/* Typography Utility Classes */
+.text-light {
+  font-weight: var(--font-light);
+}
+.text-regular {
+  font-weight: var(--font-regular);
+}
+.text-medium {
+  font-weight: var(--font-medium);
+}
+.text-semibold {
+  font-weight: var(--font-semibold);
+}
+.text-bold {
+  font-weight: var(--font-bold);
+}
+.text-extrabold {
+  font-weight: var(--font-extrabold);
+}
+
+/* Enhanced heading consistency */
+h1,
+.heading-1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+}
+
+h2,
+.heading-2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+}
+
+h3,
+.heading-3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-normal);
+}
+
+h4,
+.heading-4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+}
+
+h5,
+.heading-5 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+}
+
+h6,
+.heading-6 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-normal);
+}
+
+/* Body text consistency */
+p,
+.body-text {
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+}
+
+/* UI Text Classes for Consistency */
+.ui-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+}
+
+.ui-caption {
+  font-size: var(--text-xs);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+}
+
+.timer-display {
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.button-text {
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+}
+
+.stats-number {
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+}
+
+/* Input and form element consistency */
+input,
+textarea,
+select {
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+}
+
+button {
+  font-weight: var(--font-medium);
+  line-height: var(--leading-tight);
+}
+
+/* Stats Card Text Utilities - Ensure Single Line Display */
+.stats-label-single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.stats-compact {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-tight);
+}
+
+.stats-responsive-text {
+  font-size: clamp(0.65rem, 2vw, 0.85rem);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.stats-responsive-text-emphasis {
+  font-size: clamp(0.7rem, 2.2vw, 0.9rem);
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ===== END TYPOGRAPHY SYSTEM ===== */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--bg-light);
+  transition: var(--transition);
+}
+
+body.pomodoro-mode {
+  background-color: var(--focus-color);
+}
+
+body.short-break-mode {
+  background-color: var(--short-break-color);
+}
+
+body.long-break-mode {
+  background-color: var(--long-break-color);
+}
+
+body.reverse-mode {
+  background-color: var(--reverse-color);
+}
+
+body.break-mode {
+  background-color: var(--break-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  font-size: 32px;
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  padding: 12px 0;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-light);
+  font-weight: 600;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+
+.tab.active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.timer-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.timer {
+  font-size: 100px;
+  font-weight: var(--font-extrabold);
+  color: var(--text-light);
+  margin: 20px 0;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  font-feature-settings: "tnum";
+}
+
+@media (max-width: 600px) {
+  .timer {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 400px) {
+  .timer {
+    font-size: 60px;
+  }
+}
+
+.timer-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.primary-btn {
+  padding: 16px 50px;
+  border: none;
+  border-radius: 8px;
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+.secondary-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-left: 15px;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.secondary-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.progress-container {
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 0%;
+  transition: width 1s linear;
+}
+
+.session-info {
+  color: var(--text-light);
+  margin-top: 15px;
+  font-size: 16px;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.session-count {
+  display: flex;
+  gap: 5px;
+}
+
+.session-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+.session-dot.completed {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.settings-section {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.settings-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.settings-toggle {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.settings-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.settings-content.open {
+  max-height: 500px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-label {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.time-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.time-value {
+  width: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+  /* Modern approach to remove spinner buttons */
+  appearance: none;
+}
+
+/* Explicit styling for Firefox */
+.time-value[type="number"] {
+  appearance: none;
+}
+
+/* Explicit styling for Chrome, Safari, Edge, Opera */
+.time-value::-webkit-outer-spin-button,
+.time-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: #555;
+  font-weight: bold;
+}
+
+.time-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.switch-mode {
+  margin: 10px 0;
+}
+
+.switch-btn {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.switch-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.max-time {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.current-task {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.info-section {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+
+.info-box h3 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.info-box li {
+  color: var(--text-dark);
+  padding: 5px 0;
+  opacity: 0.8;
+}
+
+.info-box .settings-note {
+  color: var(--text-dark);
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: rgba(139, 95, 191, 0.1);
+  border-left: 3px solid #8b5fbf;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tasks-section .settings-note {
+  color: var(--text-dark);
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: rgba(139, 95, 191, 0.1);
+  border-left: 3px solid #8b5fbf;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ==============================================
+   Modern Footer Styles
+   ============================================== */
+
+.footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+  border-radius: 16px;
+  margin-top: 30px;
+}
+
+.footer-content {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand strong {
+  font-weight: 700;
+}
+
+.footer-version {
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-left: 0.5em;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-links a:hover {
+  transform: translateY(-2px);
+}
+
+.footer-icon {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover .footer-icon {
+  opacity: 1;
+}
+
+.footer-divider {
+  margin: 0 0.2rem;
+  font-weight: 300;
+}
+
+/* ==============================================
+   Theme Compatibility
+   ============================================== */
+
+/* Light Theme (Default) */
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom) .footer {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-dark);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom) .footer-brand {
+  color: #4a4a4a;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom)
+  .footer-brand
+  strong {
+  color: #1a1a1a;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom) .footer-links a {
+  color: #333;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom)
+  .footer-links
+  a:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom) .footer-divider {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Themes (Dark, YourName, Custom) */
+.theme-dark .footer,
+.theme-yourname .footer,
+.theme-custom .footer {
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .footer-brand,
+.theme-yourname .footer-brand,
+.theme-custom .footer-brand {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .footer-brand strong,
+.theme-yourname .footer-brand strong,
+.theme-custom .footer-brand strong {
+  color: white;
+}
+
+.theme-dark .footer-links a,
+.theme-yourname .footer-links a,
+.theme-custom .footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .footer-links a:hover,
+.theme-yourname .footer-links a:hover,
+.theme-custom .footer-links a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .footer-divider,
+.theme-yourname .footer-divider,
+.theme-custom .footer-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Color Theme Support - Looks exactly like Light Mode but with colored background */
+body.theme-color {
+  background-color: var(--color-theme-bg, #a53860);
+  background-image: none;
+  color: var(--text-light); /* Use white text like other modes */
+  transition: var(--transition);
+}
+
+/* Timer container - same as default light mode */
+body.theme-color .timer-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  border: none;
+  backdrop-filter: none;
+}
+
+/* Timer styling - white text like other modes */
+body.theme-color .timer {
+  font-size: 100px;
+  font-weight: bold;
+  color: var(--text-light);
+  margin: 20px 0;
+  line-height: 1;
+}
+
+/* App title */
+body.theme-color .app-title {
+  font-size: 32px;
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Mode tabs - same as light mode */
+body.theme-color .mode-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.theme-color .mode-tabs .tab {
+  padding: 12px 0;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-light);
+  font-weight: 600;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+
+body.theme-color .mode-tabs .tab.active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Primary button - same as light mode */
+body.theme-color .primary-btn {
+  padding: 16px 50px;
+  border: none;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-color .primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.theme-color .primary-btn:active {
+  transform: translateY(0);
+}
+
+/* Secondary button - same as light mode */
+body.theme-color .secondary-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-left: 15px;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+body.theme-color .secondary-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Progress bar - same as light mode */
+body.theme-color .progress-container {
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+body.theme-color .progress-bar {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 0%;
+  transition: width 1s linear;
+}
+
+/* Session info - same as light mode */
+body.theme-color .session-info {
+  color: var(--text-light);
+  margin-top: 15px;
+  font-size: 16px;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.theme-color .session-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+body.theme-color .session-dot.completed {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Info section and tasks section - same as light mode */
+body.theme-color .info-section,
+body.theme-color .tasks-section {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  border: none;
+  backdrop-filter: none;
+}
+
+body.theme-color .info-box h3,
+body.theme-color .tasks-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+body.theme-color .info-box p,
+body.theme-color .info-box li {
+  color: var(--text-dark);
+  opacity: 0.8;
+  padding: 5px 0;
+}
+
+body.theme-color .info-box .settings-note {
+  color: var(--text-dark);
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: rgba(139, 95, 191, 0.1);
+  border-left: 3px solid #8b5fbf;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+body.theme-color .tasks-section .settings-note {
+  color: var(--text-dark);
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: rgba(139, 95, 191, 0.1);
+  border-left: 3px solid #8b5fbf;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Task styling - same as light mode */
+body.theme-color .task-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  background-color: white;
+  color: var(--text-dark);
+}
+
+body.theme-color .add-task-btn {
+  padding: 12px 20px;
+  background-color: var(--focus-color);
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+body.theme-color .add-task-btn:hover {
+  filter: brightness(1.1);
+}
+
+body.theme-color .task-item {
+  /* Only override what you need for color theme, not layout */
+  border-bottom: 1px solid #ececec;
+  background: #fff;
+}
+
+body.theme-color .task-text {
+  flex: 1;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+body.theme-color .task-completed .task-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+body.theme-color .task-delete {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+body.theme-color .task-delete:hover {
+  opacity: 1;
+  color: var(--focus-color);
+}
+
+/* Switch button - same as light mode */
+body.theme-color .switch-btn {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+body.theme-color .switch-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-color .max-time {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Color theme footer styling - same as light mode */
+body.theme-color .footer {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-dark);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+  border-radius: 16px;
+  margin-top: 30px;
+}
+
+body.theme-color .footer-brand {
+  color: #4a4a4a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+body.theme-color .footer-brand strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+body.theme-color .footer-links a {
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+body.theme-color .footer-links a:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+body.theme-color .footer-divider {
+  color: rgba(0, 0, 0, 0.2);
+  margin: 0 0.2rem;
+  font-weight: 300;
+}
+
+/* ==============================================
+   Responsive Styles
+   ============================================== */
+
+/* Mobile */
+@media (max-width: 47.9em) {
+  /* Below 768px */
+  .footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 48em) {
+  /* 768px */
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    margin-bottom: 0;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .footer-divider {
+    display: inline;
+  }
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* Tasks section */
+.tasks-section {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin-top: 30px;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tasks-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Ensure contribution graph header spacing matches tasks header */
+#contribution-graph {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+#contribution-graph .tasks-header {
+  margin-top: 0; /* avoid extra spacing inside the section */
+}
+
+/* Subheader layout for contribution graph (left=range, center=info, right=controls) */
+#contribution-graph .contrib-subheader > div:first-child {
+  text-align: left;
+}
+#contribution-graph .contrib-subheader > div:nth-child(2) {
+  text-align: center;
+}
+#contribution-graph .contrib-subheader > div:last-child {
+  text-align: right;
+}
+
+/* ✅ Responsive controls for Contribution Graph */
+#contribution-graph .contrib-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap; /* allow controls to wrap on narrow screens */
+}
+#contribution-graph .contrib-range {
+  font-size: 13px;
+  min-width: 0; /* allow shrinking on small screens */
+}
+#contribution-graph .contrib-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#contribution-graph .contrib-controls .contrib-select {
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#contribution-graph .contrib-controls .month-select {
+  margin-left: 0;
+}
+
+/* Smaller screen adjustments: stack and better spacing */
+@media (max-width: 420px) {
+  #contribution-graph .contrib-subheader {
+    align-items: flex-start;
+  }
+  #contribution-graph .contrib-range {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  #contribution-graph .contrib-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  #contribution-graph .contrib-controls .contrib-select {
+    flex: 0 1 auto;
+  }
+  #contribution-graph .contrib-controls .month-select {
+    order: 3;
+  }
+}
+
+@media (max-width: 360px) {
+  #contribution-graph .contrib-controls .contrib-select {
+    max-width: 120px;
+    font-size: 11px;
+  }
+}
+
+.tasks-helper-text {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.task-input-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px; /* Rounded on left side for desktop */
+  font-size: 16px;
+}
+
+.add-task-btn {
+  padding: 12px 20px;
+  background-color: var(--focus-color);
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0; /* Rounded on right side for desktop */
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-item:hover {
+  background-color: #f8f8f8;
+}
+
+.task-item.task-focused {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin: 5px 0;
+  border: 1px solid #2196f3;
+}
+
+.task-item.task-focused::before {
+  content: "📌 ";
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.task-item.task-focused .task-text {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.task-checkbox {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  min-height: initial;
+  min-width: initial;
+  display: inline;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.task-completed .task-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-delete {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.task-delete:hover {
+  opacity: 1;
+  color: #948979;
+}
+
+/* Mute Alert Modal */
+.mute-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mute-alert-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mute-alert {
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.mute-alert-header {
+  background-color: #f5f5f5;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.mute-alert-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mute-alert-title .icon {
+  font-size: 22px;
+}
+
+.mute-alert-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.mute-alert-content p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mute-alert-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 20px 20px;
+}
+
+.mute-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-align: center;
+  min-height: 44px; /* Touch-friendly height for mobile */
+}
+
+.mute-btn-secondary {
+  flex: 0 0 30%; /* Dismiss button takes 30% width */
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+.mute-btn-secondary:hover {
+  background-color: #e5e5e5;
+}
+
+.mute-btn-primary {
+  flex: 0 0 70%; /* Mute Sound & Dismiss takes 70% width */
+  background-color: var(--focus-color);
+  color: white;
+}
+
+.mute-btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .mute-alert-actions {
+    gap: 8px;
+    padding: 0 16px 16px;
+  }
+
+  .mute-btn {
+    font-size: 14px;
+    padding: 14px 16px;
+    min-height: 48px; /* Larger touch target on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .mute-alert-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mute-btn {
+    flex: 1 1 100% !important; /* Force 100% width on mobile */
+    width: 100%;
+  }
+}
+
+/* Mute Alert Close Button styling */
+.mute-alert-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #777;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.mute-alert-close:hover {
+  color: #333;
+}
+
+/* Fix for dark theme */
+body.theme-dark .mute-alert-close {
+  color: #aaa;
+}
+
+body.theme-dark .mute-alert-close:hover {
+  color: #fff;
+}
+
+/* Dark theme support */
+body.theme-dark .mute-alert {
+  background-color: #222;
+  color: #f1f1f1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.theme-dark .mute-alert-header {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #333;
+}
+
+body.theme-dark .mute-alert-title {
+  color: #f1f1f1;
+}
+
+body.theme-dark .mute-alert-content p {
+  color: #ddd;
+}
+
+body.theme-dark .mute-btn-secondary {
+  background-color: #333;
+  color: #ddd;
+}
+
+body.theme-dark .mute-btn-secondary:hover {
+  background-color: #444;
+}
+
+/* Motivational Alert Modal Styles */
+.motivational-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001; /* Higher than mute alert */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.motivational-alert-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.motivational-alert {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: motivationalPopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  color: white;
+}
+
+@keyframes motivationalPopIn {
+  0% {
+    transform: scale(0.8) rotate(-2deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.motivational-alert-header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.motivational-alert-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.motivational-alert-title .icon {
+  font-size: 28px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.motivational-alert-content {
+  padding: 30px 25px;
+  text-align: center;
+}
+
+.motivational-alert-content p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.motivational-alert-actions {
+  padding: 20px 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.motivational-btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  min-height: 52px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.motivational-btn-secondary {
+  flex: 0 0 38%; /* "No, not ready" takes 38% width */
+  background: rgba(255, 255, 255, 0.7);
+  color: #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.motivational-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.motivational-btn-primary {
+  flex: 0 0 62%; /* "Mute Sound & Dismiss" takes 62% width */
+  background: rgba(255, 255, 255, 0.9);
+  color: #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.motivational-btn-primary:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Single button style - for "OK, LET ME TRY AGAIN" */
+.motivational-btn-single {
+  flex: 1 1 100%;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 16px 24px;
+  min-height: 56px;
+}
+
+.motivational-btn-single:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .motivational-alert-actions {
+    padding: 16px 20px 20px;
+    gap: 12px;
+  }
+
+  .motivational-btn {
+    font-size: 13px;
+    padding: 14px 18px;
+    min-height: 52px;
+    letter-spacing: 0.3px;
+  }
+
+  .motivational-btn-single {
+    padding: 16px 20px;
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 480px) {
+  .motivational-alert-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .motivational-btn {
+    flex: 1 1 100% !important; /* Force 100% width on mobile */
+    width: 100%;
+    white-space: normal; /* Allow text wrap on mobile */
+  }
+
+  .motivational-btn-single {
+    width: 100%;
+  }
+}
+
+/* Dark theme support for motivational alert */
+body.theme-dark .motivational-alert {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* Theme: Dark */
+body.theme-dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.theme-dark .info-section,
+body.theme-dark .tasks-section {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-dark .info-box h3,
+body.theme-dark .tasks-title,
+body.theme-dark .task-text {
+  color: #f1f1f1;
+}
+
+body.theme-dark .info-box p,
+body.theme-dark .info-box li {
+  color: #ddd;
+}
+
+body.theme-dark .task-input {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border-color: #444;
+}
+
+body.theme-dark .task-item {
+  border-bottom-color: #333;
+}
+
+body.theme-dark .task-completed .task-text {
+  color: #888;
+}
+
+/* Fix for settings-note in dark mode */
+body.theme-dark .info-box .settings-note {
+  background-color: rgba(139, 95, 191, 0.15);
+  border-left: 3px solid #8b5fbf;
+  color: #ddd;
+}
+
+body.theme-dark .tasks-section .settings-note {
+  background-color: rgba(139, 95, 191, 0.15);
+  border-left: 3px solid #8b5fbf;
+  color: #ddd;
+}
+
+body.theme-dark .add-task-btn {
+  background-color: #8b5fbf; /* Match purple theme in dark mode */
+}
+
+body.theme-dark .mode-tabs {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.theme-dark .mode-tabs .tab.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Improved mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    padding: 10px;
+    overflow-x: hidden;
+  }
+
+  .timer-container {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+  }
+
+  .primary-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  .tab {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .app-title {
+    font-size: 28px;
+    line-height: 1.2;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .settings-section,
+  .tasks-section,
+  .info-section {
+    padding: 20px 15px;
+  }
+
+  .task-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .add-task-btn {
+    padding: 10px 15px;
+  }
+
+  /* Fixed layout for task container */
+  .task-input-container {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  /* Info section improvements */
+  .info-box {
+    word-break: break-word;
+  }
+
+  .info-box li {
+    line-height: 1.6;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fullscreen-btn {
+    width: 44px;
+    height: 44px;
+    right: 75px;
+  }
+
+  .fullscreen-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .focus-mode-btn {
+    width: 44px;
+    height: 44px;
+    right: 130px;
+  }
+
+  .focus-mode-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-btn {
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .fullscreen-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .focus-mode-btn {
+    bottom: 140px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .focus-mode-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* When in fullscreen on mobile, position the button at the top for easier access */
+  body.is-fullscreen .fullscreen-btn {
+    top: 20px;
+    bottom: auto;
+    right: 20px;
+  }
+
+  body.is-fullscreen .container {
+    padding: 60px 15px 20px; /* Add more top padding to account for button */
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .timer {
+    font-size: 56px;
+    margin: 15px 0;
+  }
+
+  .primary-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .secondary-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .timer-actions {
+    flex-direction: column;
+  }
+
+  .time-value {
+    width: 40px;
+    font-size: 16px;
+  }
+
+  .time-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Fixed task input for mobile - stacked layout */
+  .task-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .task-input {
+    border-radius: 8px; /* Fully rounded for mobile */
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  .add-task-btn {
+    border-radius: 8px; /* Fully rounded for mobile */
+    width: 100%;
+    padding: 12px;
+  }
+
+  .task-item {
+    padding: 12px 0;
+  }
+
+  .task-text {
+    font-size: 14px;
+    width: calc(100% - 70px); /* Make room for checkbox and delete button */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Fixed delete button position */
+  .task-delete {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  /* Improve mute alert for small screens */
+  .mute-alert {
+    width: 95%;
+    max-width: 95%;
+  }
+
+  .mute-alert-content p {
+    font-size: 14px;
+  }
+
+  .mute-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  /* Improve info section readability */
+  .info-section {
+    padding: 15px;
+  }
+
+  .info-box h3 {
+    font-size: 18px;
+  }
+
+  .info-box p,
+  .info-box li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .info-box .settings-note {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+  .app-title {
+    font-size: 20px;
+    line-height: 1.2;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .timer {
+    font-size: 48px;
+  }
+
+  .mode-tabs {
+    margin-bottom: 10px;
+  }
+
+  .tab {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  /* Improve task input placeholder */
+  .task-input::placeholder {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  /* Fix session dots on very small screens */
+  .session-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .footer {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+}
+
+/* Hide scrollbar for web */
+body::-webkit-scrollbar {
+  width: 8px; /* Adjust width to make it less visible */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Subtle color for the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for a softer look */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4); /* Slightly darker on hover */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Transparent track to blend with the background */
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Thumb and track colors */
+}
+
+/* Fix content overflow */
+* {
+  max-width: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  touch-action: manipulation; /* Disable double-tap zoom */
+}
+
+/* Make all interactive elements touch-friendly - except checkboxes */
+button,
+.tab,
+.task-delete,
+.time-btn {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Override the touch-friendly styles specifically for task checkboxes */
+.task-item .task-checkbox {
+  min-height: initial;
+  min-width: initial;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  flex: none;
+  margin-right: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* Fix task checkbox alignment on mobile */
+@media (max-width: 480px) {
+  .task-checkbox {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 12px;
+  }
+}
+
+/* Add 君の名は Theme - Kimi no Na Wa */
+body.theme-yourname {
+  /* Improved path handling for the background image */
+  background-image: url("../images/Theme/kimi-no-na-wa.jpg");
+  /* Fallback color in case image fails to load */
+  background-color: #1a2a4a;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  position: relative;
+  /* Force hardware acceleration to improve rendering */
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  transform: none !important;
+  /* Fix for some mobile browsers that don't support fixed backgrounds */
+  min-height: 100vh;
+}
+
+/* Mobile-specific fixes for the background image */
+@media (max-width: 768px) {
+  body.theme-yourname {
+    /* Some mobile browsers don't support fixed attachment well */
+    background-attachment: scroll;
+    /* Ensure the image always covers the screen */
+    background-size: cover;
+    /* Position from top for better mobile viewing */
+    background-position: top center;
+  }
+}
+
+/* Add overlay to improve readability on yourname theme */
+body.theme-yourname::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Special styling for timer containers in yourname theme */
+/* 
+body.theme-yourname .timer-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+*/
+
+/* Make timer container fully opaque for better visibility */
+body.theme-yourname .timer-container {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Task and info sections for yourname theme */
+body.theme-yourname .tasks-section,
+body.theme-yourname .info-section,
+body.theme-yourname .settings-section {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Improve text readability in yourname theme */
+body.theme-yourname .app-title,
+body.theme-yourname .timer,
+body.theme-yourname .tasks-title,
+body.theme-yourname .info-box h3 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style task input for yourname theme */
+body.theme-yourname .task-input {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+body.theme-yourname .task-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style task items for yourname theme */
+body.theme-yourname .task-item {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-yourname .task-text {
+  color: #ffffff;
+}
+
+body.theme-yourname .task-completed .task-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Style buttons for yourname theme */
+body.theme-yourname .primary-btn {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+body.theme-yourname .primary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+body.theme-yourname .secondary-btn,
+body.theme-yourname .switch-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-yourname .secondary-btn:hover,
+body.theme-yourname .switch-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Mode tabs for yourname theme */
+body.theme-yourname .mode-tabs {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.theme-yourname .tab {
+  color: rgba(255, 255, 255, 0.8);
+}
+body.theme-yourname .tab.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Settings button for yourname theme */
+body.theme-yourname .settings-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-yourname .settings-btn svg {
+  color: #ffffff;
+}
+
+/* Progress bar for yourname theme */
+body.theme-yourname .progress-container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.theme-yourname .progress-bar {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Session dots for yourname theme */
+body.theme-yourname .session-dot {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-yourname .session-dot.completed {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Fix info box text for yourname theme */
+body.theme-yourname .info-box p,
+body.theme-yourname .info-box li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-yourname .settings-note {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-yourname .tasks-section .settings-note {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Toast notification for yourname theme */
+body.theme-yourname .toast {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add-task button for yourname theme */
+body.theme-yourname .add-task-btn {
+  background-color: rgba(139, 95, 191, 0.8);
+}
+
+body.theme-yourname .add-task-btn:hover {
+  background-color: rgba(139, 95, 191, 1);
+}
+
+/* Ensure the theme preserves across element interactions */
+.focus-mode.theme-yourname,
+.short-break-mode.theme-yourname,
+.long-break-mode.theme-yourname,
+.reverse-mode.theme-yourname {
+  background-image: url("../images/Theme/kimi-no-na-wa.jpg");
+  background-color: #1a2a4a; /* Fallback */
+}
+
+/* Handle iOS Safari-specific issues */
+@supports (-webkit-touch-callout: none) {
+  body.theme-yourname {
+    /* iOS Safari has issues with background-attachment: fixed */
+    background-attachment: scroll;
+    /* Force hardware acceleration differently for iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Add Man in Rain Theme */
+body.theme-rain {
+  /* Improved path handling for the background image */
+  background-image: url("../images/Theme/man-in-rain.gif");
+  /* Fallback color in case image fails to load */
+  background-color: #1a2a4a;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  position: relative;
+  /* Force hardware acceleration to improve rendering */
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  transform: none !important;
+  /* Fix for some mobile browsers that don't support fixed backgrounds */
+  min-height: 100vh;
+}
+
+/* Mobile-specific fixes for the background image */
+@media (max-width: 768px) {
+  body.theme-rain {
+    /* Some mobile browsers don't support fixed attachment well */
+    background-attachment: scroll;
+    /* Ensure the image always covers the screen */
+    background-size: cover;
+    /* Position from top for better mobile viewing */
+    background-position: top center;
+  }
+}
+
+/* Add overlay to improve readability on rain theme */
+body.theme-rain::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Special styling for timer containers in rain theme */
+body.theme-rain .timer-container {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Task and info sections for rain theme */
+body.theme-rain .tasks-section,
+body.theme-rain .info-section,
+body.theme-rain .settings-section {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Improve text readability in rain theme */
+body.theme-rain .app-title,
+body.theme-rain .timer,
+body.theme-rain .tasks-title,
+body.theme-rain .info-box h3 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style task input for rain theme */
+body.theme-rain .task-input {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+body.theme-rain .task-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style task items for rain theme */
+body.theme-rain .task-item {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-rain .task-text {
+  color: #ffffff;
+}
+
+body.theme-rain .task-completed .task-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Style buttons for rain theme */
+body.theme-rain .primary-btn {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+body.theme-rain .primary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+body.theme-rain .secondary-btn,
+body.theme-rain .switch-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-rain .secondary-btn:hover,
+body.theme-rain .switch-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Mode tabs for rain theme */
+body.theme-rain .mode-tabs {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.theme-rain .tab {
+  color: rgba(255, 255, 255, 0.8);
+}
+body.theme-rain .tab.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Settings button for rain theme */
+body.theme-rain .settings-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-rain .settings-btn svg {
+  color: #ffffff;
+}
+
+/* Progress bar for rain theme */
+body.theme-rain .progress-container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.theme-rain .progress-bar {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Session dots for rain theme */
+body.theme-rain .session-dot {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-rain .session-dot.completed {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Fix info box text for rain theme */
+body.theme-rain .info-box p,
+body.theme-rain .info-box li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-rain .settings-note {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Toast notification for rain theme */
+body.theme-rain .toast {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add-task button for rain theme */
+body.theme-rain .add-task-btn {
+  background-color: rgba(139, 95, 191, 0.8);
+}
+
+body.theme-rain .add-task-btn:hover {
+  background-color: rgba(139, 95, 191, 1);
+}
+
+/* Ensure the theme preserves across element interactions */
+.focus-mode.theme-rain,
+.short-break-mode.theme-rain,
+.long-break-mode.theme-rain,
+.reverse-mode.theme-rain {
+  background-image: url("../images/Theme/man-in-rain.gif");
+  background-color: #1a2a4a; /* Fallback */
+}
+
+/* Handle iOS Safari-specific issues */
+@supports (-webkit-touch-callout: none) {
+  body.theme-rain {
+    /* iOS Safari has issues with background-attachment: fixed */
+    background-attachment: scroll;
+    /* Force hardware acceleration differently for iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Add footer styling for rain theme */
+.theme-rain .footer {
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theme-rain .footer-brand {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-rain .footer-brand strong {
+  color: white;
+}
+
+.theme-rain .footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-rain .footer-links a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-rain .footer-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom Theme with user-uploaded background image */
+body.theme-custom {
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  position: relative;
+  /* Force hardware acceleration to improve rendering */
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  transform: none !important;
+  min-height: 100vh;
+}
+
+/* Add overlay to improve readability on custom theme */
+body.theme-custom::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Special styling for timer containers in custom theme */
+body.theme-custom .timer-container {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Task and info sections for custom theme */
+body.theme-custom .tasks-section,
+body.theme-custom .info-section,
+body.theme-custom .settings-section {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Improve text readability in custom theme */
+body.theme-custom .app-title,
+body.theme-custom .timer,
+body.theme-custom .tasks-title,
+body.theme-custom .info-box h3 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style task input for custom theme */
+body.theme-custom .task-input {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+body.theme-custom .task-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style task items for custom theme */
+body.theme-custom .task-item {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-custom .task-text {
+  color: #ffffff;
+}
+
+body.theme-custom .task-completed .task-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Style buttons for custom theme */
+body.theme-custom .primary-btn {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+body.theme-custom .primary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+body.theme-custom .secondary-btn,
+body.theme-custom .switch-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-custom .secondary-btn:hover,
+body.theme-custom .switch-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Mode tabs for custom theme */
+body.theme-custom .mode-tabs {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.theme-custom .tab {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-custom .tab.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Settings button for custom theme */
+body.theme-custom .settings-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-custom .settings-btn svg {
+  color: #ffffff;
+}
+
+/* Progress bar for custom theme */
+body.theme-custom .progress-container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.theme-custom .progress-bar {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Session dots for custom theme */
+body.theme-custom .session-dot {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-custom .session-dot.completed {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Fix info box text for custom theme */
+body.theme-custom .info-box p,
+body.theme-custom .info-box li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-custom .settings-note {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Toast notification for custom theme */
+body.theme-custom .toast {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add-task button for custom theme */
+body.theme-custom .add-task-btn {
+  background-color: rgba(139, 95, 191, 0.8);
+}
+
+body.theme-custom .add-task-btn:hover {
+  background-color: rgba(139, 95, 191, 1);
+}
+
+/* Ensure the theme preserves across element interactions */
+.focus-mode.theme-custom,
+.short-break-mode.theme-custom,
+.long-break-mode.theme-custom,
+.reverse-mode.theme-custom {
+  /* Background will be applied via JavaScript */
+  background-color: #1a2a4a; /* Fallback */
+}
+
+/* Mobile-specific fixes for the custom background image */
+@media (max-width: 768px) {
+  body.theme-custom {
+    /* Some mobile browsers don't support fixed attachment well */
+    background-attachment: scroll;
+    /* Ensure the image always covers the screen */
+    background-size: cover;
+    /* Position from top for better mobile viewing */
+    background-position: top center;
+  }
+}
+
+/* Handle iOS Safari-specific issues */
+@supports (-webkit-touch-callout: none) {
+  body.theme-custom {
+    /* iOS Safari has issues with background-attachment: fixed */
+    background-attachment: scroll;
+    /* Force hardware acceleration differently for iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Fullscreen Button */
+.fullscreen-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* Improve text readability in custom theme */
+/* Removed misplaced transform and box-shadow properties */
+
+.fullscreen-btn svg {
+  width: 22px;
+  height: 22px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+/* Improved selector for fullscreen icon display */
+.fullscreen-btn .enter-fullscreen-icon {
+  display: block;
+}
+
+.fullscreen-btn .exit-fullscreen-icon {
+  display: none;
+}
+
+body.is-fullscreen .fullscreen-btn .enter-fullscreen-icon {
+  display: none;
+}
+
+body.is-fullscreen .fullscreen-btn .exit-fullscreen-icon {
+  display: block;
+}
+
+/* Pulse animation for the exit fullscreen button to make it more noticeable */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body.is-fullscreen .fullscreen-btn {
+  background-color: rgba(255, 64, 64, 0.9); /* More noticeable red color */
+  animation: pulse 2s ease-in-out 1; /* Apply animation once to draw attention */
+}
+
+body.is-fullscreen .fullscreen-btn svg {
+  color: white;
+}
+
+body.is-fullscreen .fullscreen-btn:hover {
+  transform: scale(1.15);
+  background-color: rgba(255, 64, 64, 1);
+}
+
+/* Mobile optimizations for fullscreen button */
+@media (max-width: 768px) {
+  .fullscreen-btn {
+    width: 44px;
+    height: 44px;
+    right: 75px;
+  }
+
+  .fullscreen-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-btn {
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .fullscreen-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* When in fullscreen on mobile, position the button at the top for easier access */
+  body.is-fullscreen .fullscreen-btn {
+    top: 20px;
+    bottom: auto;
+    right: 20px;
+  }
+
+  body.is-fullscreen .container {
+    padding: 60px 15px 20px; /* Add more top padding to account for button */
+  }
+}
+
+/* Replace any focus-mode-active with lockedin-mode-active */
+body.lockedin-mode-active {
+  overflow: hidden; /* Prevent scrolling when locked in mode is active */
+}
+
+/* Ensure all focus-info-modal is replaced with lockedin-info-modal */
+.lockedin-info-modal-overlay,
+.about-info-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s linear 0.25s,
+    opacity 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.lockedin-info-modal-overlay.active,
+.about-info-modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* ==============================================
+   Feedback & Bug Reporting Section
+   ============================================== */
+
+.feedback-section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-dark);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.feedback-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+#feedback-and-bug-reporting-form-fnkwn7 {
+  height: 500px; /* Default height */
+  border-radius: 8px;
+}
+
+/* Dark theme adjustments */
+.theme-dark .feedback-section,
+.theme-yourname .feedback-section,
+.theme-custom .feedback-section {
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feedback-section {
+    padding: 1.5rem;
+  }
+
+  #feedback-and-bug-reporting-form-fnkwn7 {
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-section {
+    padding: 1rem;
+  }
+
+  .feedback-title {
+    font-size: 1.25rem;
+  }
+
+  .feedback-description {
+    font-size: 0.9rem;
+  }
+
+  #feedback-and-bug-reporting-form-fnkwn7 {
+    height: 400px;
+  }
+}
+
+/* Add Man in Rain Theme */
+body.theme-rain {
+  /* Improved path handling for the background image */
+  background-image: url("../images/Theme/man-in-rain.gif");
+  /* Fallback color in case image fails to load */
+  background-color: #1a2a4a;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  position: relative;
+  /* Force hardware acceleration to improve rendering */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Fix for some mobile browsers that don't support fixed backgrounds */
+  min-height: 100vh;
+}
+
+/* Mobile-specific fixes for the background image */
+@media (max-width: 768px) {
+  body.theme-rain {
+    /* Some mobile browsers don't support fixed attachment well */
+    background-attachment: scroll;
+    /* Ensure the image always covers the screen */
+    background-size: cover;
+    /* Position from top for better mobile viewing */
+    background-position: top center;
+  }
+}
+
+/* Add overlay to improve readability on rain theme */
+body.theme-rain::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Special styling for timer containers in rain theme */
+body.theme-rain .timer-container {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Task and info sections for rain theme */
+body.theme-rain .tasks-section,
+body.theme-rain .info-section,
+body.theme-rain .settings-section {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Improve text readability in rain theme */
+body.theme-rain .app-title,
+body.theme-rain .timer,
+body.theme-rain .tasks-title,
+body.theme-rain .info-box h3 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style task input for rain theme */
+body.theme-rain .task-input {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+body.theme-rain .task-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style task items for rain theme */
+body.theme-rain .task-item {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-rain .task-text {
+  color: #ffffff;
+}
+
+body.theme-rain .task-completed .task-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Style buttons for rain theme */
+body.theme-rain .primary-btn {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+body.theme-rain .primary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+body.theme-rain .secondary-btn,
+body.theme-rain .switch-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-rain .secondary-btn:hover,
+body.theme-rain .switch-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Mode tabs for rain theme */
+body.theme-rain .mode-tabs {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.theme-rain .tab {
+  color: rgba(255, 255, 255, 0.8);
+}
+body.theme-rain .tab.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Settings button for rain theme */
+body.theme-rain .settings-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-rain .settings-btn svg {
+  color: #ffffff;
+}
+
+/* Progress bar for rain theme */
+body.theme-rain .progress-container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.theme-rain .progress-bar {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Session dots for rain theme */
+body.theme-rain .session-dot {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-rain .session-dot.completed {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Fix info box text for rain theme */
+body.theme-rain .info-box p,
+body.theme-rain .info-box li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-rain .settings-note {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Toast notification for rain theme */
+body.theme-rain .toast {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add-task button for rain theme */
+body.theme-rain .add-task-btn {
+  background-color: rgba(139, 95, 191, 0.8);
+}
+
+body.theme-rain .add-task-btn:hover {
+  background-color: rgba(139, 95, 191, 1);
+}
+
+/* Ensure the theme preserves across element interactions */
+.focus-mode.theme-rain,
+.short-break-mode.theme-rain,
+.long-break-mode.theme-rain,
+.reverse-mode.theme-rain {
+  background-image: url("../images/Theme/man-in-rain.gif");
+  background-color: #1a2a4a; /* Fallback */
+}
+
+/* Handle iOS Safari-specific issues */
+@supports (-webkit-touch-callout: none) {
+  body.theme-rain {
+    /* iOS Safari has issues with background-attachment: fixed */
+    background-attachment: scroll;
+    /* Force hardware acceleration differently for iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Add footer styling for rain theme */
+.theme-rain .footer {
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theme-rain .footer-brand {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-rain .footer-brand strong {
+  color: white;
+}
+
+.theme-rain .footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-rain .footer-links a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-rain .footer-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Prevent background scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+.settings-modal {
+  display: none; /* hide by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.settings-modal.open {
+  display: flex;
+}
+
+/* Ensure modal content is centered and scrollable if needed */
+.settings-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Add Task Button - Unified Theme Styling */
+
+/* Light mode themes (pomodoro, break modes, color theme) - use theme colors */
+body.pomodoro-mode #add-task-btn.secondary-btn {
+  background: var(--focus-color);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+body.short-break-mode #add-task-btn.secondary-btn {
+  background: var(--short-break-color);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+body.long-break-mode #add-task-btn.secondary-btn {
+  background: var(--long-break-color);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+body.reverse-mode #add-task-btn.secondary-btn {
+  background: var(--reverse-color, #393e46);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+body.break-mode #add-task-btn.secondary-btn {
+  background: var(--break-color, #393e46);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+body.theme-color #add-task-btn.secondary-btn {
+  background: var(--color-theme-bg, #a53860);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* Dark mode themes (dark, kimi no nawa, custom, gif) - use white background */
+body.theme-dark #add-task-btn.secondary-btn,
+body.theme-yourname #add-task-btn.secondary-btn,
+body.theme-custom #add-task-btn.secondary-btn,
+body.theme-rain #add-task-btn.secondary-btn {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover states for light mode themes */
+body.pomodoro-mode #add-task-btn.secondary-btn:hover,
+body.short-break-mode #add-task-btn.secondary-btn:hover,
+body.long-break-mode #add-task-btn.secondary-btn:hover,
+body.reverse-mode #add-task-btn.secondary-btn:hover,
+body.break-mode #add-task-btn.secondary-btn:hover,
+body.theme-color #add-task-btn.secondary-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover states for dark mode themes */
+body.theme-dark #add-task-btn.secondary-btn:hover,
+body.theme-yourname #add-task-btn.secondary-btn:hover,
+body.theme-custom #add-task-btn.secondary-btn:hover,
+body.theme-rain #add-task-btn.secondary-btn:hover {
+  background: #f0f0f0;
+  color: #000000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* STREAK! */
+/* Duolingo-style streak pill */
+.duo-streak-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #fffbe6 60%, #ffe066 100%);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(255, 200, 40, 0.12);
+  padding: 10px 28px 10px 18px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Arial",
+    sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #e67e22;
+  border: 2px solid #ffe066;
+  min-width: 160px;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  animation: streak-pop 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+@keyframes streak-pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.duo-flame {
+  font-size: 2.1em;
+  margin-right: 6px;
+  animation: flame-flicker 1.2s infinite alternate;
+}
+@keyframes flame-flicker {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.25) drop-shadow(0 0 8px #ffd700);
+  }
+}
+.duo-streak-num {
+  font-size: 2.2em;
+  color: #ff9900;
+  margin-right: 6px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #ffe06680;
+}
+.duo-streak-label {
+  font-size: 1em;
+  color: #b8860b;
+  font-weight: 600;
+  margin-left: 2px;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+/* Streak Stats Card */
+
+.streak-stats-card {
+  background: #181a1b;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  padding: 28px 18px 18px 18px;
+  max-width: 540px;
+  margin: 24px auto 0 auto;
+  color: #fff;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+.streak-stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 18px;
+  gap: 8px;
+}
+
+.streak-stats-header .streak-title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leaderboard-btn {
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+  color: #2c2c2c;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.75em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leaderboard-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, #ffe55c 0%, #ffb347 100%);
+}
+
+.leaderboard-btn:active {
+  transform: translateY(0) scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .leaderboard-btn-text {
+    display: none;
+  }
+
+  .leaderboard-btn {
+    padding: 8px 12px;
+    font-size: 0.8em;
+    position: relative;
+  }
+
+  /* Chat bubble for mobile leaderboard button */
+  .leaderboard-btn::after {
+    content: "Tap to view leaderboard!";
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 18px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation:
+      leaderboardTipFadeIn 0.5s ease-out 2s forwards,
+      leaderboardTipGlow 2s ease-in-out 3s infinite;
+  }
+
+  /* Speech bubble arrow */
+  .leaderboard-btn::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #2c3e50;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    animation: leaderboardTipFadeIn 0.5s ease-out 2s forwards;
+  }
+
+  @keyframes leaderboardTipFadeIn {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(5px) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+  }
+
+  @keyframes leaderboardTipFadeOut {
+    0% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-5px) scale(0.8);
+    }
+  }
+
+  @keyframes leaderboardTipGlow {
+    0%,
+    100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 4px 20px rgba(52, 152, 219, 0.4),
+        0 0 15px rgba(52, 152, 219, 0.3);
+    }
+  }
+
+  /* Enhanced pulse effect for the button itself */
+  .leaderboard-btn {
+    animation: leaderboardPulse 4s ease-in-out 1s infinite;
+  }
+
+  @keyframes leaderboardPulse {
+    0%,
+    70%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+    }
+    15% {
+      transform: scale(1.08);
+      box-shadow:
+        0 4px 20px rgba(255, 215, 0, 0.6),
+        0 0 15px rgba(255, 215, 0, 0.4);
+    }
+  }
+
+  /* Mobile leaderboard tip - permanent display */
+  .mobile-leaderboard-tip {
+    position: fixed;
+    background: var(--card-bg, #2c3e50);
+    color: var(--text-color, #fff);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    pointer-events: none;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation:
+      leaderboardTipFadeIn 0.5s ease-out forwards,
+      leaderboardTipGlow 2s ease-in-out infinite;
+  }
+
+  .mobile-leaderboard-tip .mobile-tip-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 20px;
+    min-height: 12px;
+  }
+
+  /* Theme support for mobile tip */
+  .dark-mode .mobile-leaderboard-tip {
+    background: #34495e;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .custom-theme .mobile-leaderboard-tip {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--accent-color, rgba(255, 255, 255, 0.2));
+  }
+
+  .rain-theme .mobile-leaderboard-tip {
+    background: rgba(44, 62, 80, 0.9);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Hide tip after user interacts */
+  .leaderboard-btn.clicked::after,
+  .leaderboard-btn.clicked::before {
+    display: none;
+  }
+
+  /* Additional mobile visibility enhancements */
+  .leaderboard-btn {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Breathing effect for extra attention */
+  .leaderboard-btn:not(.clicked) {
+    animation: leaderboardBreathe 3s ease-in-out 0.5s infinite;
+  }
+
+  @keyframes leaderboardBreathe {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+  }
+
+  /* Theme support for chat bubble */
+  body.theme-dark .leaderboard-btn::after {
+    background: linear-gradient(135deg, #4a4a4a 0%, #6c63ff 100%);
+    border: 2px solid rgba(108, 99, 255, 0.3);
+  }
+
+  body.theme-dark .leaderboard-btn::before {
+    border-top-color: #4a4a4a;
+  }
+
+  body.theme-yourname .leaderboard-btn::after,
+  body.theme-custom .leaderboard-btn::after,
+  body.theme-rain .leaderboard-btn::after {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(79, 28, 81, 0.9) 100%
+    );
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+  }
+
+  body.theme-yourname .leaderboard-btn::before,
+  body.theme-custom .leaderboard-btn::before,
+  body.theme-rain .leaderboard-btn::before {
+    border-top-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Smaller mobile screens optimization */
+@media (max-width: 480px) {
+  .leaderboard-btn::after {
+    font-size: 11px;
+    padding: 6px 10px;
+    top: -40px;
+  }
+
+  .leaderboard-btn::before {
+    top: -6px;
+    border-top-width: 6px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+  }
+
+  .leaderboard-btn {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+}
+.streak-fire {
+  font-size: 1.5em;
+  margin-right: 6px;
+}
+.streak-title {
+  letter-spacing: 1px;
+}
+.streak-stats-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 18px;
+}
+.streak-stats-block {
+  flex: 1;
+  background: #23272b;
+  border-radius: 8px;
+  padding: 16px 8px 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+}
+.streak-stats-value {
+  font-size: 2em;
+  font-weight: var(--font-extrabold);
+  color: #ffb300;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.streak-stats-label {
+  font-size: 0.85em;
+  color: #eee;
+  font-weight: var(--font-medium);
+  margin-bottom: 2px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+.streak-stats-date {
+  font-size: 0.75em;
+  color: #bbb;
+  margin-top: 2px;
+  white-space: nowrap;
+  text-align: center;
+}
+.streak-current {
+  border-left: 1.5px solid #333;
+  border-right: 1.5px solid #333;
+  position: relative;
+}
+.streak-stats-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px solid #ffb300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  background: #181a1b;
+  box-shadow: 0 0 0 4px #23272b;
+}
+.streak-current-label {
+  color: #ffb300;
+  font-weight: var(--font-semibold) !important;
+  font-size: 0.9em !important;
+  text-shadow: 0 0 8px rgba(255, 179, 0, 0.3);
+  letter-spacing: 0.02em;
+}
+/* Enhanced responsive design for stats cards */
+@media (max-width: 768px) {
+  .streak-stats-label {
+    font-size: 0.8em;
+  }
+  .streak-current-label {
+    font-size: 0.85em !important;
+  }
+  .streak-stats-date {
+    font-size: 0.7em;
+  }
+  .streak-stats-value {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 600px) {
+  .streak-stats-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .streak-stats-block {
+    border-radius: 8px;
+    border: none;
+    min-width: 0;
+    padding: 14px 6px 10px 6px;
+  }
+  .streak-current {
+    border-left: none;
+    border-right: none;
+  }
+  .streak-stats-label {
+    font-size: 0.75em;
+  }
+  .streak-current-label {
+    font-size: 0.8em !important;
+  }
+  .streak-stats-date {
+    font-size: 0.65em;
+  }
+}
+
+@media (max-width: 480px) {
+  .streak-stats-content {
+    gap: 8px;
+  }
+  .streak-stats-block {
+    padding: 12px 4px 8px 4px;
+  }
+  .streak-stats-label {
+    font-size: 0.7em;
+    font-weight: var(--font-regular);
+  }
+  .streak-current-label {
+    font-size: 0.75em !important;
+    font-weight: var(--font-semibold) !important;
+  }
+  .streak-stats-date {
+    font-size: 0.6em;
+  }
+  .streak-stats-value {
+    font-size: 1.6em;
+    margin-bottom: 4px;
+  }
+}
+
+/* Desktop: allow long date lines to wrap and avoid overlap (>=768px) */
+@media (min-width: 768px) {
+  .streak-stats-date {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    text-align: center;
+    line-height: 1.25;
+    margin-top: 4px;
+    max-width: 100%;
+  }
+
+  /* Ensure label doesn't collapse layout if it's unusually long */
+  .streak-stats-label {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  /* Small visual tweak to increase spacing between blocks if date wraps to multiple lines */
+  .streak-stats-content {
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .streak-stats-block {
+    padding-bottom: 14px;
+  }
+}
+
+/* User Stats Card - Matching Streak Stats Card Design */
+.user-stats-card {
+  background: #181a1b;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  padding: 28px 18px 18px 18px;
+  max-width: 540px;
+  margin: 16px auto 0 auto;
+  color: #fff;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+.user-stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 18px;
+  gap: 8px;
+}
+
+.user-stats-title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Most Used Pomodoro Card - match User Stats / Streak card design */
+
+.pomodoro-usage-card .pomodoro-usage-label {
+  color: #ffffff;
+  font-weight: var(--font-medium);
+}
+
+.pomodoro-usage-card .pomodoro-usage-value {
+  color: #ffb300; /* gold accent */
+  font-weight: var(--font-semibold);
+}
+
+.pomodoro-usage-card .user-stats-header {
+  margin-bottom: 12px;
+}
+
+/* Pomodoro color tokens - keep legend dots and bar segments in sync */
+.pomodoro-usage-card {
+  --pom-classic-color: #ffd166; /* exact classic dot color */
+  --pom-reverse-color: #6a7fdb; /* exact reverse dot color */
+  --pom-empty-color: #23272b; /* fallback background when graph has no data */
+}
+
+/* Ensure the Most Used Pomodoro card explicitly uses the same typography
+   as the User Stats card so sizes won't accidentally diverge. This is
+   intentionally minimal and safe — it mirrors the existing user-stats sizes. */
+.pomodoro-usage-card {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+.pomodoro-usage-card .user-stats-title {
+  /* keep same size as .user-stats-title */
+  font-size: 1.15em;
+}
+.pomodoro-usage-card .pomodoro-usage-label {
+  font-size: 0.85em;
+}
+.pomodoro-usage-card .pomodoro-usage-value {
+  font-size: 0.9em;
+}
+
+/* Segmented horizontal bar for Most Used Pomodoro card */
+.pomodoro-segmented-container {
+  position: relative;
+}
+.pomodoro-segmented-bar {
+  width: 100%;
+  height: 18px; /* slightly thicker to match example */
+  background: var(--pom-empty-color, #333333);
+  border-radius: 999px; /* full pill */
+  overflow: hidden;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--pom-classic-width, 50%) var(
+      --pom-reverse-width,
+      50%
+    );
+}
+.pomodoro-segmented-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pomodoro-segment {
+  height: 100%;
+  transition:
+    width 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    opacity 280ms ease;
+  min-width: 0; /* allow 0 width */
+}
+.pomodoro-segment.classic {
+  background: var(--pom-classic-color, #ffd166);
+  width: var(--pom-classic-width, 0%);
+}
+.pomodoro-segment.reverse {
+  background: var(--pom-reverse-color, #6a7fdb);
+  width: var(--pom-reverse-width, 0%);
+}
+.pomodoro-segment.zero {
+  opacity: 0.0001; /* hide tiny zero width segments but keep layout */
+}
+
+/* Accessible text for screen readers helper */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Move inline row layout into CSS for maintainability */
+.pomodoro-usage-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* keep items together */
+  gap: 6px; /* overall small gap between items */
+  padding: 6px 0;
+}
+
+/* Inner entry used to control exact spacing between legend dot, label, and percent */
+.pomodoro-usage-entry {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* tighten spacing so label and percent sit close */
+}
+
+.pomodoro-usage-row .pomodoro-usage-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* smaller gap between dot and label */
+}
+.pomodoro-usage-row .pomodoro-usage-value {
+  margin-left: 0; /* rely on parent gap for spacing to achieve 'one space' look */
+  color: #ffb300; /* ensure accent color */
+  font-weight: var(--font-semibold);
+}
+
+/* Legend dot for Classic / Reverse */
+.pomodoro-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 12px;
+}
+.pomodoro-dot.classic {
+  background: var(--pom-classic-color, #ffd166);
+}
+.pomodoro-dot.reverse {
+  background: var(--pom-reverse-color, #6a7fdb);
+}
+
+.user-stats-title {
+  letter-spacing: 1px;
+  color: #fff;
+  /* match the streak header title size */
+  font-size: 1.3em;
+  font-weight: 600;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+.user-stats-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.user-stats-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #23272b;
+  border-radius: 8px;
+  padding: 16px 12px;
+  margin-bottom: 12px;
+  min-height: 20px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.user-stats-row:last-child {
+  margin-bottom: 0;
+}
+
+.user-stats-label {
+  font-size: 0.85em;
+  color: #eee;
+  font-weight: var(--font-bold);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.3;
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+.user-stats-value {
+  font-size: 0.9em;
+  color: #ffb300;
+  font-weight: var(--font-semibold);
+  text-align: left;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Theme overrides for User Stats Card - matching Streak Stats Card */
+
+/* Light Theme (Default) */
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom) .user-stats-card {
+  background: #181a1b;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom)
+  .user-stats-title {
+  color: #fff;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom) .user-stats-row {
+  background: #23272b;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom)
+  .user-stats-label {
+  color: #eee;
+}
+
+body:not(.theme-dark):not(.theme-yourname):not(.theme-custom)
+  .user-stats-value {
+  color: #ffb300;
+}
+
+/* Dark Theme */
+.theme-dark .user-stats-card {
+  background: #181a1b;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.theme-dark .user-stats-title {
+  color: #fff;
+}
+
+.theme-dark .user-stats-row {
+  background: #23272b;
+}
+
+.theme-dark .user-stats-label {
+  color: #eee;
+}
+
+.theme-dark .user-stats-value {
+  color: #ffb300;
+}
+
+/* YourName Theme */
+.theme-yourname .user-stats-card {
+  background: #181a1b;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.theme-yourname .user-stats-title {
+  color: #fff;
+}
+
+.theme-yourname .user-stats-row {
+  background: #23272b;
+}
+
+.theme-yourname .user-stats-label {
+  color: #eee;
+}
+
+.theme-yourname .user-stats-value {
+  color: #ffb300;
+}
+
+/* Custom Theme */
+.theme-custom .user-stats-card {
+  background: #181a1b;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.theme-custom .user-stats-title {
+  color: #fff;
+}
+
+.theme-custom .user-stats-row {
+  background: #23272b;
+}
+
+.theme-custom .user-stats-label {
+  color: #eee;
+}
+
+.theme-custom .user-stats-value {
+  color: #ffb300;
+}
+
+/* Color Theme */
+body.theme-color .user-stats-card {
+  background: #181a1b;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+body.theme-color .user-stats-title {
+  color: #fff;
+}
+
+body.theme-color .user-stats-row {
+  background: #23272b;
+}
+
+body.theme-color .user-stats-label {
+  color: #eee;
+}
+
+body.theme-color .user-stats-value {
+  color: #ffb300;
+}
+
+/* Enhanced responsive design for User Stats Card - matching Streak Stats Card */
+@media (max-width: 768px) {
+  .user-stats-label {
+    font-size: 0.8em;
+  }
+  .user-stats-value {
+    font-size: 0.85em;
+  }
+  .user-stats-row {
+    padding: 14px 10px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .user-stats-row {
+    padding: 12px 8px;
+    margin-bottom: 10px;
+    gap: 6px;
+  }
+  .user-stats-label {
+    font-size: 0.75em;
+  }
+  .user-stats-value {
+    font-size: 0.8em;
+  }
+}
+
+/* Smart responsive layout - handle long content intelligently */
+@media (max-width: 480px) {
+  /* Allow text wrapping for long content rows */
+  .user-stats-row[data-stat="totalFocusTime"] .user-stats-value,
+  .user-stats-row[data-stat="mostProductiveDay"] .user-stats-value {
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 400px) {
+  .user-stats-card {
+    padding: 24px 14px 14px 14px;
+  }
+  /* Make Pomodoro card inherit the same compact padding on very small screens */
+  .pomodoro-usage-card {
+    padding: 24px 14px 14px 14px;
+  }
+  .user-stats-content {
+    gap: 0;
+  }
+  .user-stats-row {
+    padding: 12px 8px;
+    margin-bottom: 8px;
+    gap: 4px;
+  }
+  .user-stats-label {
+    font-size: 0.72em;
+    font-weight: var(--font-medium);
+    margin-bottom: 3px;
+  }
+  .user-stats-value {
+    font-size: 0.75em;
+    font-weight: var(--font-semibold);
+  }
+  /* Pomodoro labels/values should match the User Stats responsive sizes */
+  .pomodoro-usage-card .pomodoro-usage-label {
+    font-size: 0.72em;
+    font-weight: var(--font-medium);
+    margin-bottom: 3px;
+  }
+  .pomodoro-usage-card .pomodoro-usage-value {
+    font-size: 0.75em;
+    font-weight: var(--font-semibold);
+  }
+  .user-stats-header {
+    margin-bottom: 14px;
+  }
+  .user-stats-title {
+    font-size: 1.1em;
+  }
+  /* Ensure Pomodoro card title matches User Stats title on small screens */
+  .pomodoro-usage-card .user-stats-title {
+    font-size: 1.1em;
+  }
+}
+
+/* Extra small screens - for very long content */
+@media (max-width: 360px) {
+  .user-stats-card {
+    padding: 20px 12px 12px 12px;
+  }
+  .pomodoro-usage-card {
+    padding: 20px 12px 12px 12px;
+  }
+  .user-stats-row {
+    padding: 10px 6px;
+    margin-bottom: 6px;
+  }
+  .user-stats-label {
+    font-size: 0.68em;
+  }
+  .user-stats-value {
+    font-size: 0.72em;
+    line-height: 1.4;
+  }
+  .user-stats-title {
+    font-size: 1em;
+  }
+  /* Ensure Pomodoro card title matches User Stats title on extra-small screens */
+  .pomodoro-usage-card .user-stats-title {
+    font-size: 1em;
+  }
+  /* Keep Pomodoro label/value aligned with the User Stats scaling on extra-small screens */
+  .pomodoro-usage-card .pomodoro-usage-label {
+    font-size: 0.68em;
+  }
+  .pomodoro-usage-card .pomodoro-usage-value {
+    font-size: 0.72em;
+    line-height: 1.4;
+  }
+}
+
+/* Specific improvements for long content like "Most Productive Day" */
+@media (max-width: 600px) {
+  .user-stats-value {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+.seo-article-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.2rem;
+  padding: 1.8rem;
+  margin: 3rem auto 2rem;
+  max-width: 640px;
+  color: white;
+  text-align: center;
+}
+.seo-article-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.seo-article-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.learn-more-link {
+  color: #4fd1c5;
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.learn-more-link:hover {
+  text-decoration: underline;
+}
+
+/* Additional theme-specific styling for tasks-section settings-note */
+body.theme-rain .tasks-section .settings-note {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-custom .tasks-section .settings-note {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+/* FOR SCROLLBAR AND LATER FOR FOOTER */
+
+html,
+body {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .mdb-footer-main {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 1.5rem 0 !important;
+  }
+  .mdb-footer-main > div {
+    width: 90vw !important;
+    max-width: 420px;
+    min-width: 0 !important;
+    margin: 0 0 2.2rem 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    align-items: center !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .mdb-footer-main h6 {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.35rem !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+    width: 100%;
+  }
+  .mdb-footer-main hr {
+    margin: 0 auto 1rem auto !important;
+    width: 48px !important;
+    height: 2px;
+  }
+  .mdb-footer-main p,
+  .mdb-footer-main a {
+    font-size: 1rem !important;
+    margin: 0.25rem 0 !important;
+    text-align: center !important;
+    width: 100%;
+    word-break: break-word;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Unified title style for main stats headers
+   Ensure 'My Stats :', 'User\'s Stats' and 'Most Used Pomodoro' always
+   use the exact same font family, size and weight across all breakpoints.
+   Placed at the end so it overrides earlier media-query adjustments safely.
+*/
+.streak-title,
+.user-stats-title,
+.pomodoro-usage-card .user-stats-title {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  font-size: 18px; /* slightly smaller fixed size for balanced headers */
+  font-weight: 700; /* match the prominent header weight */
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* Tweak the streak header icon + title alignment so 'My Stats :' matches visually */
+.streak-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px; /* explicit so it doesn't inherit different ems */
+  line-height: 1;
+}
+.streak-fire {
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Achievements / Badges styles (minimal and safe) - scoped to .achievements-card */
+.achievements-card .achievements-section {
+  margin-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 12px;
+}
+.achievements-card .achievements-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  color: var(--text-primary, #fff);
+}
+.achievements-card .badges-row {
+  /* Use CSS Grid for predictable responsive columns */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* desktop: 4 per row */
+  gap: 12px;
+  align-items: center;
+  justify-items: center;
+}
+
+.achievements-card .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* keep square, we'll round it */
+  max-width: 180px; /* prevent overly large badges on very wide containers */
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.achievements-card .badge-icon {
+  width: 72%;
+  height: 72%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.02);
+  border: 4px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+}
+
+/* Hide textual info for now; we'll show details in a modal later */
+.achievements-card .badge-info {
+  display: none !important;
+}
+.achievements-card .badge-desc,
+.achievements-card .badge-info strong {
+  display: none !important;
+}
+.achievements-card .no-badge {
+  font-style: italic;
+  color: var(--text-secondary, #9aa0a6);
+}
+
+/* Tablet: keep 4 per row but allow larger gaps */
+@media (max-width: 992px) {
+  .achievements-card .badges-row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .achievements-card .badge {
+    max-width: 160px;
+  }
+}
+
+/* Mobile: 2 badges per row */
+@media (max-width: 480px) {
+  .achievements-card .badges-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .achievements-card .badge {
+    max-width: 120px;
+  }
+  .achievements-card .badge-icon {
+    width: 70%;
+    height: 70%;
+    border-width: 3px;
+  }
+}
+
+/* Achievements card should visually match the other stats cards */
+.achievements-card {
+  /* reuse the same tokens as .user-stats-card */
+  background: #181a1b;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  padding: 20px 16px;
+  max-width: 540px;
+  margin: 18px auto 0 auto;
+  color: #fff;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+.achievements-card .user-stats-header {
+  margin-bottom: 12px;
+}
+.achievements-card #achievements-container {
+  width: 100%;
+}
+.achievements-card .badges-row {
+  margin-top: 6px;
+}
+
+/* Badge modal styles */
+.badge-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 12000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.badge-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.badge-modal {
+  width: min(720px, 94%);
+  background: linear-gradient(180deg, #121212, #151515);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  color: #fff;
+  transform: translateY(8px) scale(0.98);
+  transition: transform 200ms ease;
+}
+.badge-modal-overlay.open .badge-modal {
+  transform: translateY(0) scale(1);
+}
+.badge-modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.badge-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+.badge-modal-banner {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge-modal-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  border: 6px solid rgba(255, 255, 255, 0.04);
+}
+.badge-modal-body {
+  padding: 20px 28px 28px 28px;
+}
+.badge-modal-title {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+}
+.badge-modal-desc {
+  margin: 0 0 10px 0;
+  color: var(--text-secondary, #bfc6c9);
+}
+.badge-modal-date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #9aa0a6);
+}
+
+@media (max-width: 480px) {
+  .badge-modal {
+    width: 96%;
+  }
+  .badge-modal-icon {
+    width: 110px;
+    height: 110px;
+  }
+  .badge-modal-body {
+    padding: 14px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Task Styles and Some Theme Styles
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Task input section - base style */
+.task-input-section {
+  margin-bottom: 20px;
+}
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.description-group {
+  width: 100%;
+}
+#task-input {
+  flex: 1;
+  padding: 12px 18px;
+  border: 2px solid #bbb;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #222;
+  background: #fff;
+  transition: border-color 0.2s;
+  font-weight: 400;
+}
+#task-input:focus {
+  outline: none;
+  border-color: #a89c8e;
+  box-shadow: 0 0 0 2px #e6e1da;
+}
+#task-description-input {
+  width: 100%;
+  padding: 10px 18px;
+  border: 2px solid #bbb;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 44px;
+  max-height: 120px;
+  color: #444;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+#task-description-input:focus {
+  outline: none;
+  border-color: #a89c8e;
+  box-shadow: 0 0 0 2px #e6e1da;
+}
+#task-description-input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Add Task button */
+#add-task-btn.secondary-btn {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.task-input-container {
+  margin-bottom: 6px; /* reduce space below task input */
+}
+.task-desc-container {
+  margin-top: 0;
+  margin-bottom: 6px; /* reduce space below desc input */
+}
+#task-description-input {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#add-task-btn.secondary-btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  /* Remove duplicate padding property */
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  height: 48px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  box-shadow: none;
+  letter-spacing: 0.5px;
+}
+/* Task list - white background, subtle border, rounded */
+.task-list {
+  margin-top: 8px;
+}
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 18px;
+  background: #fff;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid #ececec;
+  box-shadow: none;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+.task-item:hover {
+  background: #f8f8f8;
+  border-color: #e0e0e0;
+}
+.task-item.task-completed {
+  opacity: 0.7;
+  background: #f6f6f6;
+}
+.task-item.task-completed .task-text,
+.task-item.task-completed .task-description {
+  text-decoration: line-through;
+  color: #bbb;
+}
+.task-checkbox {
+  margin-right: 16px;
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: #a89c8e;
+  border-radius: 6px;
+  border: 1.5px solid #bbb;
+  background: #fff;
+}
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+.task-text {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2px;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 16px;
+}
+.task-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  margin-top: 2px;
+}
+/* Delete button - light gray, small, minimal */
+.task-delete {
+  background: none;
+  color: #bbb;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  margin-left: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.task-delete:hover {
+  background: #f2eae2;
+  color: #a89c8e;
+}
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #add-task-btn {
+    width: 100%;
+  }
+  .task-item {
+    padding: 12px;
+  }
+  .task-checkbox {
+    margin-right: 10px;
+  }
+  .task-delete {
+    margin-left: 8px;
+  }
+  .task-desc-container {
+    margin-top: 2px !important;
+    margin-bottom: 8px;
+  }
+  .task-input-container {
+    margin-bottom: 2px !important;
+  }
+}
+
+/* THEME OVERRIDES */
+
+/* DARK THEME */
+body.theme-dark #task-input,
+body.theme-dark #task-description-input {
+  background: #232323;
+  color: #fff;
+  border-color: #444;
+}
+body.theme-dark #task-input:focus,
+body.theme-dark #task-description-input:focus {
+  border-color: #8b5fbf;
+  box-shadow: 0 0 0 2px #2d2d2d;
+}
+body.theme-dark #task-input::placeholder,
+body.theme-dark #task-description-input::placeholder {
+  color: #aaa;
+}
+body.theme-dark .task-item {
+  background: #232323;
+  border-color: #222;
+}
+body.theme-dark .task-text {
+  color: #fff;
+}
+body.theme-dark .task-description {
+  color: #bbb;
+}
+body.theme-dark .task-delete {
+  color: #888;
+}
+body.theme-dark .task-delete:hover {
+  background: #2d2d2d;
+  color: #8b5fbf;
+}
+
+/* YOURNAME THEME */
+body.theme-yourname #task-input,
+body.theme-yourname #task-description-input {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+body.theme-yourname #task-input:focus,
+body.theme-yourname #task-description-input:focus {
+  border-color: #8b5fbf;
+  box-shadow: 0 0 0 2px #8b5fbf;
+}
+body.theme-yourname #task-input::placeholder,
+body.theme-yourname #task-description-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+body.theme-yourname .task-item {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+body.theme-yourname .task-text {
+  color: #fff;
+}
+body.theme-yourname .task-description {
+  color: #eee;
+}
+body.theme-yourname .task-delete {
+  color: #bbb;
+}
+body.theme-yourname .task-delete:hover {
+  background: rgba(139, 95, 191, 0.1);
+  color: #8b5fbf;
+}
+
+/* CUSTOM THEME */
+body.theme-custom #task-input,
+body.theme-custom #task-description-input {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+body.theme-custom #task-input:focus,
+body.theme-custom #task-description-input:focus {
+  border-color: #8b5fbf;
+  box-shadow: 0 0 0 2px #8b5fbf;
+}
+body.theme-custom #task-input::placeholder,
+body.theme-custom #task-description-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+body.theme-custom .task-item {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+body.theme-custom .task-text {
+  color: #fff;
+}
+body.theme-custom .task-description {
+  color: #eee;
+}
+body.theme-custom .task-delete {
+  color: #bbb;
+}
+body.theme-custom .task-delete:hover {
+  background: rgba(139, 95, 191, 0.1);
+  color: #8b5fbf;
+}
+
+/* RAIN THEME */
+body.theme-rain #task-input,
+body.theme-rain #task-description-input {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+body.theme-rain #task-input:focus,
+body.theme-rain #task-description-input:focus {
+  border-color: #8b5fbf;
+  box-shadow: 0 0 0 2px #8b5fbf;
+}
+body.theme-rain #task-input::placeholder,
+body.theme-rain #task-description-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+body.theme-rain .task-item {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+body.theme-rain .task-text {
+  color: #fff;
+}
+body.theme-rain .task-description {
+  color: #eee;
+}
+body.theme-rain .task-delete {
+  color: #bbb;
+}
+body.theme-rain .task-delete:hover {
+  background: rgba(139, 95, 191, 0.1);
+  color: #8b5fbf;
+}
+
+/* COLOR THEME */
+body.theme-color #task-input,
+body.theme-color #task-description-input {
+  background: #fff;
+  color: #222;
+  border-color: #bbb;
+}
+body.theme-color #task-input:focus,
+body.theme-color #task-description-input:focus {
+  border-color: #a89c8e;
+  box-shadow: 0 0 0 2px #e6e1da;
+}
+body.theme-color #task-input::placeholder,
+body.theme-color #task-description-input::placeholder {
+  color: #888;
+}
+body.theme-color .task-item {
+  background: #fff;
+  border-color: #ececec;
+}
+body.theme-color .task-text {
+  color: #222;
+}
+body.theme-color .task-description {
+  color: #666;
+}
+body.theme-color .task-delete {
+  color: #bbb;
+}
+body.theme-color .task-delete:hover {
+  background: #f2eae2;
+  color: #a89c8e;
+}
+
+/* Data Recovery Notice Styles */
+.data-recovery-notice {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border: 1px solid #ffc107;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.data-recovery-notice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #ffc107;
+}
+
+.data-recovery-notice:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.25);
+}
+
+.notice-icon {
+  flex-shrink: 0;
+  color: #856404;
+  margin-top: 2px;
+}
+
+.notice-content {
+  flex: 1;
+}
+
+.notice-title {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #856404;
+  line-height: 1.2;
+}
+
+.notice-text {
+  margin: 0;
+  font-size: 13px;
+  color: #6c5b00;
+  line-height: 1.4;
+}
+
+.notice-link {
+  color: #856404;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.notice-link:hover {
+  color: #533f00;
+  border-bottom-color: #533f00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .data-recovery-notice {
+    padding: 14px 16px;
+    margin: 12px 0;
+    gap: 10px;
+  }
+
+  .notice-title {
+    font-size: 13px;
+  }
+
+  .notice-text {
+    font-size: 12px;
+  }
+}
+
+/* Theme-specific styles */
+body.theme-dark .data-recovery-notice {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  border-color: #718096;
+  color: #e2e8f0;
+}
+
+body.theme-dark .data-recovery-notice::before {
+  background: #718096;
+}
+
+body.theme-dark .notice-icon {
+  color: #a0aec0;
+}
+
+body.theme-dark .notice-title {
+  color: #e2e8f0;
+}
+
+body.theme-dark .notice-text {
+  color: #cbd5e0;
+}
+
+body.theme-dark .notice-link {
+  color: #90cdf4;
+}
+
+body.theme-dark .notice-link:hover {
+  color: #63b3ed;
+  border-bottom-color: #63b3ed;
+}
+
+body.theme-yourname .data-recovery-notice,
+body.theme-custom .data-recovery-notice,
+body.theme-rain .data-recovery-notice {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-yourname .data-recovery-notice::before,
+body.theme-custom .data-recovery-notice::before,
+body.theme-rain .data-recovery-notice::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-yourname .notice-icon,
+body.theme-custom .notice-icon,
+body.theme-rain .notice-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-yourname .notice-title,
+body.theme-custom .notice-title,
+body.theme-rain .notice-title {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.theme-yourname .notice-text,
+body.theme-custom .notice-text,
+body.theme-rain .notice-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-yourname .notice-link,
+body.theme-custom .notice-link,
+body.theme-rain .notice-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-yourname .notice-link:hover,
+body.theme-custom .notice-link:hover,
+body.theme-rain .notice-link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* DRAG & DROP TASK REORDERING VISUALS */
+.task-item.dragging {
+  opacity: 0.5;
+  background: #e0e0e0 !important;
+}
+.task-item.drop-above {
+  border-top: 3px solid #8b5fbf;
+}
+.task-item.drop-below {
+  border-bottom: 3px solid #8b5fbf;
+}
